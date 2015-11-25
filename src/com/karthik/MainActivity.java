@@ -1,4 +1,4 @@
-package com.karthik;
+	package com.karthik;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -15,21 +15,29 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		Button button_click_me = (Button) findViewById(R.id.activity_main_button_click_me);
-		button_click_me.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				Log.d(TAG, "Button Click Me, is clicked");				
-			}
-		}); //Attaching (Anonymous Inner Class) OnClickListener implementation to Button object
-		
+		attachOnClickListenerToButtonClickMe();
+
+		attachOnClickListenerToButtonClickMeToo();
+	}
+
+	private void attachOnClickListenerToButtonClickMeToo() {
 		Button button_click_me_too = (Button) findViewById(R.id.activity_main_button_click_me_too);
 		button_click_me_too.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				Log.d(TAG, "Button Click Me Too, is clicked");				
+				Log.d(TAG, "Button Click Me Too, is clicked");
+			}
+		}); //Attaching (Anonymous Inner Class) OnClickListener implementation to Button object
+	}
+
+	private void attachOnClickListenerToButtonClickMe() {
+		Button button_click_me = (Button) findViewById(R.id.activity_main_button_click_me);
+		button_click_me.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Log.d(TAG, "Button Click Me, is clicked");
 			}
 		}); //Attaching (Anonymous Inner Class) OnClickListener implementation to Button object
 	}
